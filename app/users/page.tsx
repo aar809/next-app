@@ -24,6 +24,7 @@ const UsersPage = async ({ searchParams: { sortOrder } }: Props) => {
     return (
         <> {sortOrder}
             <h1>Users</h1>
+            <Link href='/users/new' className='btn'>New User</Link>
             <table className='table table-bordered'>
                 <thead>
                     <tr>
