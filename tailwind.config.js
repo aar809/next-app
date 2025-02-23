@@ -10,6 +10,9 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(var(--tw-gradient-stops))',
       },
+      fontSize: {
+        '4xl': '2.25rem',
+      },
     },
   },
   plugins: [require("daisyui")],
