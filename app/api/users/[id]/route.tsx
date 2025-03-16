@@ -1,15 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import schema from '../schema';
 import { prisma } from "@/prisma/client";
-// interface Props {
-//     params: {id:number}
-// }
 
 export async function GET(
     request: NextRequest,
     { params }: { params: { id: string } }) {
+    const userId = params.id;
     const user = await prisma.user.findUnique({
-        where: { id: parseInt(params.id) }
+        where: { id: userId }
     });
 
     if (!user)
@@ -21,6 +19,7 @@ export async function GET(
 export async function PUT(
     request: NextRequest,
     { params }: { params: { id: string } }) {
+    const userId = params.id;
     //validate request body
     // if invalid, return 400
     const body = await request.json();
@@ -31,7 +30,7 @@ export async function PUT(
     }
 
     const user = await prisma.user.findUnique({
-        where: { id: parseInt(params.id) }
+        where: { id: userId }
     })
 
     if (!user)
@@ -48,23 +47,16 @@ export async function PUT(
         }
     })
 
-    // if (parseInt(params.id) > 10) {
-    //     return NextResponse.json({ error: 'User not found' }, { status: 404 })
-    // }
-    // fetch user with given id
-    //if doesn't exist, return 404 error
-    // update user
     return NextResponse.json(updatedUser)
-    // return updated user
 }
 
 export async function DELETE(
     request: NextRequest,
     { params }: { params: { id: string } }) {
-
+    const userId = params.id;
     const user = await prisma.user.findUnique({
         where: {
-            id: (parseInt(params.id))
+            id: userId
         }
     })
 
@@ -78,12 +70,5 @@ export async function DELETE(
         where: { id: user.id }
     })
 
-    // if (params.id > 10)
-    //     return NextResponse.json({ error: 'User not found' }, { status: 404 })
-
-    //fetch user with given id
-    //if doesn't exist, return 404 error
-    //delete user
-    //return 204 status code
     return NextResponse.json({})
 }
