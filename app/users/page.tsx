@@ -9,7 +9,6 @@ interface User {
 }
 
 interface Props {
-    // params: { slug: string[] }
     searchParams: { sortOrder: string }
 }
 
