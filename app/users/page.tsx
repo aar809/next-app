@@ -9,10 +9,11 @@ interface User {
 }
 
 interface Props {
-    searchParams: { sortOrder: string }
+    searchParams: Promise<{ sortOrder: string }>
 }
 
-const UsersPage = async ({ searchParams: { sortOrder } }: Props) => {
+const UsersPage = async ({ searchParams }: Props) => {
+    const { sortOrder } = await searchParams;
 
     const res = await fetch('https://jsonplaceholder.typicode.com/users');
     const users: User[] = await res.json();
