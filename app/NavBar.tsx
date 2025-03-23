@@ -10,7 +10,7 @@ const NavBar = () => {
     // if (status === 'loading') return null;
 
     return (
-        <div className='flex bg-slate-200 p-5 space-x-3'>
+        <div className='flex bg-slate-600 p-5 space-x-3'>
             <Link href='/' className='mr-5'>Next.js</Link>
             <Link href='/users/'>Users</Link>
             {status === 'loading' && <div> Loading... </div>}

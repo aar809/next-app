@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:mysql://localhost:3306/nextapp</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="PostgreSQL" uuid="e0e30729-b1a8-40f6-ab02-58e84d75e9dd">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://https://vdbqqrlwcitzddbavdci.supabase.co:5432/supabase-yellow-island</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
